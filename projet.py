@@ -1,19 +1,26 @@
 import tkinter as tk
 
 racine = tk.Tk()
+nombre = ""
 
 
-Touche_0 = tk.Button(racine, fg="white", bg="black", text ="0", relief="raised", height=4, width=4)
-Touche_1 = tk.Button(racine, fg="white", bg="black", text ="1", relief="raised", height=4, width=4)
-Touche_2 = tk.Button(racine, fg="white", bg="black", text ="2", relief="raised", height=4, width=4)
-Touche_3 = tk.Button(racine, fg="white", bg="black", text ="3", relief="raised", height=4, width=4)
-Touche_4 = tk.Button(racine, fg="white", bg="black", text ="4", relief="raised", height=4, width=4)
-Touche_5 = tk.Button(racine, fg="white", bg="black", text ="5", relief="raised", height=4, width=4)
-Touche_6 = tk.Button(racine, fg="white", bg="black", text ="6", relief="raised", height=4, width=4)
-Touche_7 = tk.Button(racine, fg="white", bg="black", text ="7", relief="raised", height=4, width=4)
-Touche_8 = tk.Button(racine, fg="white", bg="black", text ="8", relief="raised", height=4, width=4)
-Touche_9 = tk.Button(racine, fg="white", bg="black", text ="9", relief="raised", height=4, width=4)
-point_virgule = tk.Button(racine, fg="white", bg="black", text =".", relief="raised", height=4, width=4)
+def Number(a):
+    """Prend en entree un argument qui est un chiffre de 0 a 9 ou un point decimal ajoute cet argurment a la chaine nombre pour pouvoir afficher des nombres a la fois entiers et decimaux"""
+    global nombre
+    nombre += a
+    affiche_zone.config(text=float(nombre))
+
+Touche_0 = tk.Button(racine, fg="white", bg="black", text ="0", relief="raised", height=4, width=4, command=lambda: Number("0"))
+Touche_1 = tk.Button(racine, fg="white", bg="black", text ="1", relief="raised", height=4, width=4, command=lambda: Number("1"))
+Touche_2 = tk.Button(racine, fg="white", bg="black", text ="2", relief="raised", height=4, width=4, command=lambda: Number("2"))
+Touche_3 = tk.Button(racine, fg="white", bg="black", text ="3", relief="raised", height=4, width=4, command=lambda: Number("3"))
+Touche_4 = tk.Button(racine, fg="white", bg="black", text ="4", relief="raised", height=4, width=4, command=lambda: Number("4"))
+Touche_5 = tk.Button(racine, fg="white", bg="black", text ="5", relief="raised", height=4, width=4, command=lambda: Number("5"))
+Touche_6 = tk.Button(racine, fg="white", bg="black", text ="6", relief="raised", height=4, width=4, command=lambda: Number("6"))
+Touche_7 = tk.Button(racine, fg="white", bg="black", text ="7", relief="raised", height=4, width=4, command=lambda: Number("7"))
+Touche_8 = tk.Button(racine, fg="white", bg="black", text ="8", relief="raised", height=4, width=4, command=lambda: Number("8"))
+Touche_9 = tk.Button(racine, fg="white", bg="black", text ="9", relief="raised", height=4, width=4, command=lambda: Number("9"))
+point_virgule = tk.Button(racine, fg="white", bg="black", text =".", relief="raised", height=4, width=4, command=lambda: Number("."))
 
 plus = tk.Button(racine, fg="white", bg="black", text ="+", relief="raised", height=4, width=4)
 moins = tk.Button(racine, fg="white", bg="black", text ="-", relief="raised", height=4, width=4)
