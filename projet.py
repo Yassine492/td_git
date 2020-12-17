@@ -16,6 +16,12 @@ def Number(a):
     nombre += a
     affiche_zone["text"] = nombre
 
+def NumberKey(event):
+    """Prend en entree un argument qui est un chiffre de 0 a 9 ou un point decimal ajoute cet argurment a la chaine nombre pour pouvoir afficher des nombres a la fois entiers et decimaux"""
+    global nombre
+    nombre += str(event)
+    affiche_zone["text"] = nombre
+
 def Reset():
     """ Fonction qui va supprimer les données entrée dans la calculatrice """
     global nombre
@@ -120,6 +126,18 @@ fonction_carre = tk.Button(racine, text ="x -> x^2", fg="white", bg="black", com
 fonction_racine_carre = tk.Button(racine, text ="x -> sqrt(x)" , fg="white", bg="black", command=SquareRoot)
 fonction_logarithme = tk.Button(racine, text ="x -> log(x)", fg="white", bg="black", command=Logarithm)
 fonction_exponentielle = tk.Button(racine, text ="x -> exp(x)", fg="white", bg="black", command=Exponential)
+#
+racine.bind("<KeyPress-0>", NumberKey)
+racine.bind("<KeyPress-1>", NumberKey)
+racine.bind("<KeyPress-2>", NumberKey)
+racine.bind("<KeyPress-3>", NumberKey)
+racine.bind("<KeyPress-4>", NumberKey)
+racine.bind("<KeyPress-5>", NumberKey)
+racine.bind("<KeyPress-6>", NumberKey)
+racine.bind("<KeyPress-7>", NumberKey)
+racine.bind("<KeyPress-8>", NumberKey)
+racine.bind("<KeyPress-9>", NumberKey)
+
 
 
 # boutons de numeros de 0 a 9
