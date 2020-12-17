@@ -19,7 +19,7 @@ def Number(a):
 def NumberKey(event):
     """Prend en entree un argument qui est un chiffre de 0 a 9 ou un point decimal ajoute cet argurment a la chaine nombre pour pouvoir afficher des nombres a la fois entiers et decimaux"""
     global nombre
-    nombre += str(event)
+    nombre += event.char
     affiche_zone["text"] = nombre
 
 def Reset():
@@ -152,7 +152,7 @@ Touche_7.grid(row=3, column=0)
 Touche_8.grid(row=3, column=1)
 Touche_9.grid(row=3, column=2)
 # Zone de calcul
-affiche_zone.grid(row=0, column=0, columnspan=5)
+affiche_zone.grid(row=0, column=0, columnspan=6)
 # nombres flottants
 point_virgule.grid(row=4, column=2)
 # boutons operateurs
